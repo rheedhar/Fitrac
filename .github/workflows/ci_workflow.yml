@@ -1,0 +1,27 @@
+name: CI Workflow
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Docker Image
+        run: docker build -t fitrac.
+
+      - name: Check style
+        run: docker run fitrac npm run check-style
+
+      - name: Run tests
+        run: docker run fitrac npm test
+
+

@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+//import pool from "./model/connection/db_connect";
 
 dotenv.config();
 
@@ -21,8 +22,8 @@ class Server {
   //
   // };
 
-  public start(): void {
-    const port = process.env.PORT;
+  public async start(): Promise<void> {
+    const port = process.env.SERVER_PORT;
     this.app.listen(port, () => {
       console.log(`Server is listening on port ${port}`);
     });

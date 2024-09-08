@@ -7,7 +7,6 @@ import { UnauthorizedError } from '../util/application/error';
  */
 
 const authToken = async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
-
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {

@@ -30,7 +30,5 @@ export class UnauthorizedError extends FitracError {
 export class ExistingUserError extends FitracError {
   constructor(message: string) {
     super(500, message);
-
   }
-
 }

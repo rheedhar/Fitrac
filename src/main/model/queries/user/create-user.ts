@@ -1,6 +1,10 @@
 import { RegisterUserRequest } from '../../dto/user/register-user-dto';
 
-export type RegisterUserQuery = ReturnType<any>;
+export interface RegisterUserQuery {
+  name: string;
+  text: string;
+  values: (string | number | null)[];
+}
 
 export const createRegisterUserQuery = (req: RegisterUserRequest): RegisterUserQuery => {
   return {

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import authToken from '../../../main/middleware/auth-handler';
-import { UnauthorizedError  } from '../../../main/util/application/error';
+import { UnauthorizedError } from '../../../main/util/application/error';
 import { verifyToken } from '../../../main/external_api/firebase/firebase';
 
 // mock firebase verifyToken

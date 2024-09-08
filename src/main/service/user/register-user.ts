@@ -1,11 +1,9 @@
 import { RegisterUserRequest, RegisterUserResponse } from '../../model/dto/user/register-user-dto';
 import { createRegisterUserQuery } from '../../model/queries/user/create-user';
-import {findUser, insertNewUser} from "../../dao/user-dao";
-import {ExistingUserError} from "../../util/application/error";
-
+import { findUser, insertNewUser } from '../../dao/user-dao';
+import { ExistingUserError } from '../../util/application/error';
 
 const executeRegisterUser = async (req: RegisterUserRequest): Promise<RegisterUserResponse> => {
-
   // check if user exist
   const checkUser = await findUser(req.userId, req.body.emailAddress);
   if (checkUser) {
@@ -20,7 +18,6 @@ const executeRegisterUser = async (req: RegisterUserRequest): Promise<RegisterUs
   return {
     message: 'User successfully Registered'
   };
-
 };
 
 export default executeRegisterUser;

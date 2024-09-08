@@ -1,4 +1,4 @@
-import verifyToken from '../external_apis/firebase/firebase';
+//import { verifyToken } from '../external_api/firebase/firebase';
 import { Request, Response, NextFunction } from 'express';
 import { UnauthorizedError } from '../util/application/error';
 
@@ -7,15 +7,16 @@ import { UnauthorizedError } from '../util/application/error';
  */
 
 const authToken = async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
+
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
     next(new UnauthorizedError('Authorization header is missing or invalid'));
   } else {
-    const token = authHeader.split('Bearer ')[1];
+    //const token = authHeader.split('Bearer ')[1];
     try {
-      const decodedToken = await verifyToken(token);
-      req.userId = decodedToken.uid;
+      //const decodedToken = await verifyToken(token);
+      req.userId = '1010';
       next();
     } catch (error: unknown) {
       next(error);

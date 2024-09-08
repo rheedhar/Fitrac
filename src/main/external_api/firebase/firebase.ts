@@ -14,4 +14,4 @@ const verifyToken = async (token: string): Promise<admin.auth.DecodedIdToken> =>
   }
 };
 
-export default verifyToken;
+export { verifyToken };

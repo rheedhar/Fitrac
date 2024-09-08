@@ -26,3 +26,11 @@ export class UnauthorizedError extends FitracError {
     super(401, message);
   }
 }
+
+export class ExistingUserError extends FitracError {
+  constructor(message: string) {
+    super(500, message);
+
+  }
+
+}

@@ -1,6 +1,6 @@
 import { RegisterUserRequest } from '../../dto/user/register-user-dto';
 
-type RegisterUserQuery = ReturnType<any>;
+export type RegisterUserQuery = ReturnType<any>;
 
 export const createRegisterUserQuery = (req: RegisterUserRequest): RegisterUserQuery => {
   return {
@@ -24,3 +24,5 @@ export const createRegisterUserQuery = (req: RegisterUserRequest): RegisterUserQ
     ]
   };
 };
+
+export const findUserQuery = `SELECT user_id, email_address FROM users WHERE user_id = $1 OR email_address = $2`;

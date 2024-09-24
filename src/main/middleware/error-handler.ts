@@ -12,7 +12,7 @@ const errorHandler = (error: Error, _req: Request, res: Response, _next: NextFun
   } else {
     logger.error({ error }, 'unknown exception caught');
     res.status(500).json({
-      error: 'An unknown and unexpected error occured'
+      error: 'An unknown and unexpected error occurred'
     });
   }
 };

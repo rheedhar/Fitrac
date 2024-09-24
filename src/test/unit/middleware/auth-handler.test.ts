@@ -55,10 +55,14 @@ describe('AuthHandler', () => {
         authorization: 'Bearer token'
       }
     };
+
     (verifyToken as jest.Mock).mockRejectedValueOnce(new UnauthorizedError('Unauthorized'));
+
     //when
     await authToken(mockReq as Request, mockRes as Response, mockNext);
+
     // then
+    expect(verifyToken).toHaveBeenCalledWith('token');
     expect(mockNext).toHaveBeenCalledWith(new UnauthorizedError('Unauthorized'));
   });
 
@@ -74,6 +78,7 @@ describe('AuthHandler', () => {
     await authToken(mockReq as Request, mockRes as Response, mockNext);
     // then
     expect(mockReq.userId).toBe('1234');
+    expect(verifyToken).toHaveBeenCalledWith('token');
     expect(mockNext).toHaveBeenCalledTimes(1);
   });
 });

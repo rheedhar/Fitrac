@@ -42,10 +42,10 @@ describe('Error Handler', () => {
     errorHandler(unknownError, req as Request, res as Response, next);
 
     // then
-    expect(logger.error).toHaveBeenCalledWith({ unknownError }, 'unknown exception caught');
+    expect(logger.error).toHaveBeenCalledWith({ error: unknownError }, 'unknown exception caught');
     expect(res.status).toHaveBeenCalledWith(500);
     expect(res.json).toHaveBeenCalledWith({
-      unknownError: 'An unknown and unexpected error occured'
+      error: 'An unknown and unexpected error occurred'
     });
   });
 });

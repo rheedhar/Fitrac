@@ -3,7 +3,7 @@ import executeRegisterUser from '../../../main/service/user/register-user';
 import { registerUser } from '../../../main/controller/user-controller';
 
 // Mock execute register user
-jest.mock('../../../main/service/user/register_user');
+jest.mock('../../../main/service/user/register-user');
 describe('Register User', () => {
   const firstName = 'test first name';
   const lastName = 'test last name';

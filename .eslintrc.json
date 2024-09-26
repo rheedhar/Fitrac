@@ -35,7 +35,7 @@
     "no-sequences": ["error"],           /* Disallows comma operator with side effects. */
     "@typescript-eslint/no-unused-expressions": ["error"],  /* Disallows expressions which have no effect on the state of the program. */
     "@typescript-eslint/no-shadow": ["error"],              /* Disallows variable declarations from shadowing variables declared in the outer scope. */
-    "@typescript-eslint/no-unused-vars": ["error"],         /* An error will be raised if you declare a variable, function, or import that's never used. */
+    "@typescript-eslint/no-unused-vars": ["error", {"argsIgnorePattern":  "^_" }],         /* An error will be raised if you declare a variable, function, or import that's never used. */
     "@typescript-eslint/explicit-module-boundary-types": ["error"], /* Enforces explicit return and argument @types on exported functions' and classes' public class methods. */
     "@typescript-eslint/explicit-function-return-type": ["error"],  /* Requires functions to have a explicitly declared return type */
     "@typescript-eslint/no-explicit-any": ["warn"],         /* Warns on explicit usage of 'any' type. */

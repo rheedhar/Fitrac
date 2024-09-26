@@ -9,6 +9,7 @@ const config: Config.InitialOptions = {
         'src/**/*.ts',
         '!src/main/main.ts',
         '!src/main/server.ts',
+        '!src/main/model/'
     ], // add files that we want to exclude from testing by adding !.
     coverageThreshold: {
         global: {

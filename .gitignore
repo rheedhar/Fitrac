@@ -37,6 +37,7 @@ pgdata/
 
 # dotenv environment variables file
 .env
+config/
 
 # Distribution / build
 dist

@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import authToken from '../../../main/middleware/auth-handler';
 import { UnauthorizedError } from '../../../main/util/application/error';
-import { verifyToken } from '../../../main/external_api/firebase/firebase';
+import { verifyToken } from '../../../main/external_api/firebase/firebase-auth';
 
 // mock firebase verifyToken
 jest.mock('../../../main/external_api/firebase/firebase');

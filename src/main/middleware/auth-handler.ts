@@ -1,4 +1,4 @@
-import { verifyToken } from '../external_api/firebase/firebase';
+import { verifyToken } from '../external_api/firebase/firebase-auth';
 import { Request, Response, NextFunction } from 'express';
 import { UnauthorizedError } from '../util/application/error';
 
